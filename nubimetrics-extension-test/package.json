@@ -1,0 +1,13 @@
+{
+  "name": "nubimetrics-extension-test-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "analyze": "node analyze-download.mjs",
+    "report:navigation": "node report-navigation.mjs"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "sistema-denuncias",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "prisma:generate": "prisma generate",
+    "prisma:validate": "prisma validate",
+    "processar": "node processamento/processar-csv.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.12.0",
+    "next": "^16.3.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.6",
+    "prisma": "^6.12.0",
+    "typescript": "^6.0.3"
+  }
+}

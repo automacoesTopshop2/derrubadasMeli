@@ -1,0 +1,38 @@
+# =========================
+# Secrets / environment
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Node
+# =========================
+node_modules/
+.next/
+out/
+dist/
+coverage/
+
+# =========================
+# Browser profiles / sessions
+# =========================
+storage-state.json
+manual-browser-profile/
+manual-chrome-profile/
+profile5-session-copy/
+profile/
+sessions/
+cookies/
+
+# =========================
+# Local/reference material
+# =========================
+_read_only_estocofull/
+
+# =========================
+# OS / editor
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { Button } from "@/components/ui";
+
+export default function LoginPage() {
+  return <main className="login-shell"><section className="login-panel"><div className="login-brand"><span className="brand-mark">N</span><div><strong>Monitor de marcas</strong><small>Sistema interno</small></div></div><div className="login-copy"><span className="eyebrow">ACESSO RESTRITO</span><h1>Entre no sistema</h1><p>A autenticação será conectada ao provedor definido para o MVP. Esta tela não cria uma sessão paralela.</p></div><form className="login-form"><label className="field"><span>E-mail</span><input type="email" placeholder="nome@empresa.com" disabled/></label><label className="field"><span>Senha</span><input type="password" placeholder="••••••••" disabled/></label><Button type="button" disabled>Entrar</Button></form><div className="inline-feedback info-feedback">Autenticação ainda não configurada.</div><Link href="/dashboard" className="text-link">Acessar demonstração visual</Link></section><aside className="login-aside"><span>FLUXO OPERACIONAL</span><h2>Da coleta à decisão, em um único lugar.</h2><ol><li>Importe exportações do Nubimetrics</li><li>Revise anúncios e sellers</li><li>Aplique regras aprovadas</li><li>Acompanhe denúncias</li></ol></aside></main>;
+}

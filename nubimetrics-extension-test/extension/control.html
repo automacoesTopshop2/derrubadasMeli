@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Nubimetrics</title>
+
+  <link rel="stylesheet" href="control.css">
+</head>
+
+<body>
+  <main class="app">
+
+    <header class="header">
+      <div class="brand">
+        <span class="brand-icon">N</span>
+
+        <div>
+          <span class="eyebrow">AUTOMAÇÃO</span>
+          <h1>Nubimetrics</h1>
+          <p>Pesquisa e exportação de anúncios</p>
+        </div>
+      </div>
+
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span>Pronto</span>
+      </div>
+    </header>
+
+
+    <section class="card directory-access-card">
+      <div class="card-title">
+        <div>
+          <span class="section-label">ACESSO AOS ARQUIVOS</span>
+          <h2>Pasta de Downloads</h2>
+          <p>
+            Autorize a pasta usada pelo Chrome para permitir a leitura
+            automática das próximas exportações.
+          </p>
+        </div>
+      </div>
+
+      <div
+        id="directory-access-state"
+        class="directory-access-state is-not-configured"
+      >
+        <strong id="directory-access-title">Não configurado</strong>
+        <span id="directory-access-message">
+          A seleção manual continuará disponível.
+        </span>
+      </div>
+
+      <button
+        id="authorize-downloads-directory"
+        type="button"
+        class="primary-button"
+      >
+        <span>Autorizar pasta de Downloads</span>
+      </button>
+    </section>
+
+
+    <section
+      id="integration-card"
+      class="card integration-card"
+      hidden
+    >
+      <div class="card-title">
+        <div>
+          <span class="section-label">INTEGRAÇÃO</span>
+          <h2>Exportação concluída</h2>
+          <p>
+            Selecione o arquivo detectado para disponibilizá-lo à extensão.
+            Nenhum arquivo será enviado nesta etapa.
+          </p>
+        </div>
+      </div>
+
+      <div class="file-summary file-summary-pending">
+        <strong id="pending-export-status">Arquivo para integração: PENDENTE</strong>
+        <span id="pending-export-brand"></span>
+        <span id="pending-export-name"></span>
+        <span id="pending-export-size"></span>
+      </div>
+
+      <p
+        id="automatic-file-status"
+        class="automatic-file-status"
+      >
+        Aguardando tentativa de leitura automática.
+      </p>
+
+      <div class="form-group file-picker-group">
+        <label for="integration-file">Selecionar arquivo manualmente</label>
+        <input
+          id="integration-file"
+          type="file"
+          accept=".csv,.xls,.xlsx,text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        >
+      </div>
+
+      <div
+        id="selected-file-result"
+        class="selected-file-result"
+        hidden
+      >
+        <strong id="selected-file-message"></strong>
+        <dl class="file-details">
+          <div><dt>Nome</dt><dd id="selected-file-name"></dd></div>
+          <div><dt>Tamanho</dt><dd id="selected-file-size"></dd></div>
+          <div><dt>Tipo</dt><dd id="selected-file-type"></dd></div>
+          <div><dt>Marca associada</dt><dd id="selected-file-brand"></dd></div>
+          <div><dt>Arquivo detectado originalmente</dt><dd id="selected-file-expected-name"></dd></div>
+          <div><dt>Origem</dt><dd id="selected-file-origin"></dd></div>
+          <div><dt>Horário</dt><dd id="selected-file-time"></dd></div>
+        </dl>
+      </div>
+
+      <div
+        id="spreadsheet-analysis"
+        class="spreadsheet-analysis"
+        hidden
+      >
+        <span class="section-label">ANÁLISE DA PLANILHA</span>
+        <strong id="spreadsheet-analysis-status"></strong>
+
+        <dl
+          id="spreadsheet-analysis-details"
+          class="file-details analysis-details"
+          hidden
+        >
+          <div><dt>Arquivo</dt><dd id="analysis-file-name"></dd></div>
+          <div><dt>Aba</dt><dd id="analysis-sheet-name"></dd></div>
+          <div><dt>Linhas</dt><dd id="analysis-row-count"></dd></div>
+          <div><dt>Colunas encontradas</dt><dd id="analysis-column-count"></dd></div>
+          <div><dt>Colunas</dt><dd id="analysis-columns"></dd></div>
+        </dl>
+
+        <div
+          id="analysis-fields"
+          class="analysis-fields"
+          hidden
+        ></div>
+
+        <div
+          id="analysis-warnings"
+          class="analysis-warnings"
+          hidden
+        ></div>
+      </div>
+    </section>
+
+
+    <section class="card">
+
+      <div class="card-title">
+        <div>
+          <span class="section-label">PESQUISA</span>
+          <h2>Nova pesquisa</h2>
+          <p>
+            Informe a marca que deseja pesquisar no Nubimetrics.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="brand">Marca</label>
+
+        <input
+          id="brand"
+          type="text"
+          maxlength="40"
+          autocomplete="off"
+          placeholder="Ex.: NOW Foods"
+        >
+      </div>
+
+
+      <button
+        id="start"
+        type="button"
+        class="primary-button"
+      >
+        <span>Iniciar pesquisa</span>
+      </button>
+
+    </section>
+
+
+    <section class="card">
+
+      <div class="card-title">
+        <div>
+          <span class="section-label">EXECUÇÃO</span>
+          <h2>Andamento</h2>
+          <p>
+            Acompanhe o status da operação em tempo real.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="status-box">
+        <div class="status-box-header">
+          <span class="status-box-dot"></span>
+          <span>Status da operação</span>
+        </div>
+
+        <pre id="status">Aguardando início.</pre>
+      </div>
+
+    </section>
+
+
+    <footer>
+      <span>Nubimetrics</span>
+      <span>•</span>
+      <span>Pesquisa automatizada</span>
+    </footer>
+
+  </main>
+
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="spreadsheet-analysis.js"></script>
+  <script src="control.js?v=20260925-1"></script>
+</body>
+</html>

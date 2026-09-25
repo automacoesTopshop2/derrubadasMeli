@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Teste local Nubimetrics",
+  "version": "0.1.0",
+  "description": "Teste manual assistido de pesquisa e exportação no Nubimetrics.",
+  "permissions": [
+    "downloads",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://app.nubimetrics.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Abrir teste Nubimetrics"
+  }
+}

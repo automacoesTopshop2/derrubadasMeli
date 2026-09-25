@@ -1,0 +1,13 @@
+{
+  "name": "nubimetrics-playwright-test",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:nubimetrics": "node nubimetrics-test.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0",
+    "xlsx": "^0.18.5"
+  }
+}
